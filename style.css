@@ -130,7 +130,6 @@ body {
 }
 
 .link-featured {
-    background: linear-gradient(45deg, #FF6B35, #8B5CF6);
     border: none;
     transform: scale(1.02);
     box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
