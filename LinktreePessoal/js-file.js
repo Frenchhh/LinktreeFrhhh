@@ -1,4 +1,4 @@
-// Estrutura de dados centralizada (RF01 e RNF01)
+
 const linksData = [
     {
         title: "Portfólio",
@@ -6,7 +6,7 @@ const linksData = [
         icon: "🚀",
         iconClass: "portfolio",
         url: "https://gustavofranca.dev",
-        featured: true // Link destacado
+        featured: true 
     },
     {
         title: "Instagram",
@@ -52,14 +52,13 @@ const linksData = [
     }
 ];
 
-// Função para renderizar os links
 function renderLinks() {
     const container = document.getElementById('linksContainer');
     
     linksData.forEach(link => {
         const linkElement = document.createElement('a');
         linkElement.href = link.url;
-        linkElement.target = '_blank'; // RF04 - Abrir em nova aba
+        linkElement.target = '_blank'; 
         linkElement.className = `link-item ${link.featured ? 'link-featured' : ''}`;
         
         linkElement.innerHTML = `
@@ -77,18 +76,15 @@ function renderLinks() {
     });
 }
 
-// Função para adicionar novos links (facilita manutenção)
 function addLink(linkData) {
     linksData.push(linkData);
     document.getElementById('linksContainer').innerHTML = '';
     renderLinks();
 }
 
-// Inicializar a página
 document.addEventListener('DOMContentLoaded', function() {
     renderLinks();
     
-    // Adicionar efeito de hover nos links
     const links = document.querySelectorAll('.link-item');
     links.forEach(link => {
         link.addEventListener('mouseenter', function() {
@@ -105,13 +101,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Analytics simples (opcional)
 function trackLinkClick(linkTitle) {
     console.log(`Link clicado: ${linkTitle}`);
-    // Aqui você pode integrar com Google Analytics ou outro serviço
 }
 
-// Adicionar tracking aos links
 document.addEventListener('click', function(e) {
     if (e.target.closest('.link-item')) {
         const linkTitle = e.target.closest('.link-item').querySelector('.link-title').textContent;
